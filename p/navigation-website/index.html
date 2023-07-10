@@ -1,7 +1,162 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.ico"><title>网站导航</title><meta name="keywords" content="实用、简洁、网站导航、考证、在线娱乐、软件下载、冷门网站、常用网址、效率编程"><meta name="description" content="国内超实用，超简洁的网站导航，让你一键考证，在线娱乐，软件下载，学习编程，浏览冷门网站一站式导航"><script defer="defer" src="js/chunk-vendors.06adebaa.js"></script><script defer="defer" src="js/app.55b386e5.js"></script><link href="css/chunk-vendors.cc514243.css" rel="stylesheet"><link href="css/app.13ebf8b8.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but 网站导航 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body><script>var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?4dedd80583b1b16b87257570b88c014d";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();</script></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>正在跳转...</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      letter-spacing: 2px;
+      font-size: 35px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 25px;
+    }
+
+    .header {
+      position: relative;
+      text-align: center;
+      background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+      color: white;
+    }
+
+    .inner-header {
+      height: 65vh;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .waves {
+      position: relative;
+      width: 100%;
+      height: 15vh;
+      margin-bottom: -7px;
+      min-height: 100px;
+      max-height: 150px;
+    }
+
+    .content {
+      position: relative;
+      height: 20vh;
+      text-align: center;
+      background-color: white;
+    }
+
+    .parallax>use {
+      animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax>use:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+    }
+
+    .parallax>use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+    }
+
+    .parallax>use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+    }
+
+    .parallax>use:nth-child(4) {
+      animation-delay: -5s;
+      animation-duration: 20s;
+    }
+
+    @keyframes move-forever {
+      0% {
+        transform: translate3d(-90px, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(85px, 0, 0);
+      }
+    }
+
+    @media (max-width:768px) {
+      .waves {
+        height: 40px;
+        min-height: 40px;
+      }
+
+      .content {
+        height: 30vh;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    #UrlId {
+      color: skyblue;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+
+    <div class="inner-header flex">
+      <p>来自&nbsp;飞兔小哥&nbsp;的温馨提醒</p>
+      <p>由于业务升级，该页面已整合到新首页中</p>
+      <p>首页地址：https://tinygeeker.github.io/menu/</p>
+      <p>首页地址永不取消，欢迎大家惠存，以防丢失~</p>
+      <h1>等待 <span id="seconds">3</span> 秒后自动进入新首页</h1>
+      <a id="UrlId" href="https://tinygeeker.github.io/menu/" target="_blank">无需等待，点击进入</a>
+    </div>
+
+    <!-- 背景 -->
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+
+  </div>
+</body>
+
+</html>
+<script>
+  // 获取秒数显示id
+  var seconds = document.getElementById("seconds");
+  // 设置秒数
+  var num = 3;
+  var timer = setInterval(function () {
+    num--;
+    seconds.innerText = num;
+    if (num == 0) {
+      window.location.href = 'https://tinygeeker.github.io/menu/';
+    }
+  }, 1000)
+</script>
