@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/css/bootstrap.min.css">
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/js/jquery.min.js">
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/js/bootstrap.min.js">
+  <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/js/floating.js">
   <!-- 引入tool中的icon -->
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/tool/font/iconfont.css">
   <!-- 引入常规样式 -->
@@ -18,6 +19,8 @@
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/css/footer.css">
   <!-- 引入背景色 -->
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/css/li-bgc-color.css">
+  <!-- 右侧悬浮 -->
+  <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/css/floating.css">
   <style>
     .footer a {
       margin-right: 15px;
@@ -118,6 +121,41 @@
   </div>
 
 </body>
+<script>
+  $(document).ready(function () {
+    $("body").floating({
+      "theme": "panel_theme_fillet_Blacktheme",
+      "state": true,
+      "moveState": true,
+      "size": "sm",
+      "position": "right-center",
+      "tip": {
+        "background-color": "#f20000",
+        "color": "#efb2b2"
+      },
+      "account": [
+        {
+          "type": "Email",
+          "tip": null,
+          "text": '电子邮箱',
+          "url": "mailto:tinygeeker@163.com"
+        },
+        {
+          "type": "QRcode",
+          "tip": "//tinygeeker.github.io/my/gzh/qrcode.jpg",//二维码图片地址
+          "text": '',
+          "url": null
+        },
+        {
+          "type": "Top",
+          "tip": "返回顶部",
+          "text": null,
+          "url": null
+        }
+      ]
+    });
+  }) 
+</script>
 <script>
   var _hmt = _hmt || [];
   (function () {
