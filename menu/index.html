@@ -9,9 +9,6 @@
   <!-- 引入框架 -->
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/js/jquery.min.js">
-  <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/js/bootstrap.min.js">
-  <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/js/floating.js">
   <!-- 引入tool中的icon -->
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/tool/font/iconfont.css">
   <!-- 引入常规样式 -->
@@ -21,6 +18,10 @@
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/css/li-bgc-color.css">
   <!-- 右侧悬浮 -->
   <link rel="stylesheet" href="//tinygeeker.github.io/static/menu/css/floating.css">
+
+  <script type="text/javascript" src="//tinygeeker.github.io/static/menu/js/jquery.min.js"></script>
+  <script type="text/javascript" src="//tinygeeker.github.io/static/menu/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//tinygeeker.github.io/static/menu/js/floating.js"></script>
   <style>
     .footer a {
       margin-right: 15px;
@@ -34,7 +35,7 @@
     <h2 class="page-header">
       <div class="row">
         <div class="col-xs-3">飞兔导航</div>
-        <div class="col-xs-4 text-right pull-right"><a href="#">极客百宝袋</a></div>
+        <div class="col-xs-4 text-right pull-right"><a href="https://tinygeeker.gitee.io/menu/?from=https://tinygeeker.github.io/menu/" style="color:#337ab7;font-size: 20px;">国内版>></a></div>
       </div>
     </h2>
   </div>
@@ -122,28 +123,34 @@
 
 </body>
 <script>
-  $(document).ready(function () {
+  $(function () {
     $("body").floating({
-      "theme": "panel_theme_fillet_Blacktheme",
+      "theme": "panel_theme_round_hollow",
       "state": true,
       "moveState": true,
       "size": "sm",
       "position": "right-center",
       "tip": {
-        "background-color": "#f20000",
-        "color": "#efb2b2"
+        "background-color": "#fff",
+        "color": "#000"
       },
       "account": [
         {
           "type": "Email",
-          "tip": null,
+          "tip": '电子邮箱',
           "text": '电子邮箱',
           "url": "mailto:tinygeeker@163.com"
         },
         {
+          "type": "WhatsApp",
+          "tip": "https://tinygeeker.github.io/my/wechat/001.jpg",// 个人二维码
+          "text": '微信号',
+          "url": null
+        },
+        {
           "type": "QRcode",
-          "tip": "//tinygeeker.github.io/my/gzh/qrcode.jpg",//二维码图片地址
-          "text": '',
+          "tip": "https://tinygeeker.github.io/my/gzh/qrcode.jpg",// 公众号二维码
+          "text": '公众号',
           "url": null
         },
         {
@@ -154,7 +161,7 @@
         }
       ]
     });
-  }) 
+  })
 </script>
 <script>
   var _hmt = _hmt || [];
