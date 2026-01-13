@@ -1,172 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>在线工具合集</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: #f5f7fb;
-            color: #222;
-        }
-        .page {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px 80px;
-        }
-        .header-title {
-            font-size: 26px;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        /* 模块标题 */
-        .section {
-            margin-bottom: 40px;
-        }
-        .section-title {
-            display: inline-block;
-            padding: 8px 18px;
-            background: #1677ff;
-            color: #fff;
-            border-radius: 20px;
-            font-size: 16px;
-            margin-bottom: 18px;
-        }
-
-        /* 卡片容器 */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        /* 单个卡片 */
-        .tool-card {
-            background: #fff;
-            border-radius: 14px;
-            padding: 14px 16px;
-            box-shadow: 0 4px 12px rgba(15,35,95,0.06);
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: all .2s;
-        }
-        .tool-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(15,35,95,0.12);
-        }
-        .tool-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: linear-gradient(135deg,#ff9f6b,#ff6d7a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 20px;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-        .tool-info {
-            flex: 1;
-        }
-        .tool-name {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        .tool-desc {
-            font-size: 12px;
-            color: #888;
-        }
-
-        /* 链接样式 */
-        a.tool-link {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* 底部说明 */
-        .footer {
-            margin-top: 40px;
-            font-size: 12px;
-            color: #999;
-            text-align: center;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>媒体相关 - CodeNerd404 工具集</title>
+  <style>
+    :root{ --bg:#f4f8fb; --card:#fff; --accent:#39a0ff; --muted:#667; }
+    body{ font-family: "Helvetica Neue",Segoe UI,Roboto,Arial,system-ui; background:var(--bg); margin:0; color:#102; }
+    .wrap{ max-width:1100px; margin:36px auto; padding:22px; }
+    .panel{ background:var(--card); border-radius:12px; padding:18px; box-shadow:0 8px 20px rgba(15,30,50,0.06); }
+    .title{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+    .badge{ background:var(--accent); color:#fff; padding:8px 12px; border-radius:18px; font-weight:600; }
+    .grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:14px; margin-top:8px; }
+    .card{ background:#fff; border-radius:10px; padding:14px; box-shadow:0 4px 12px rgba(10,20,40,0.04); display:flex; gap:12px; align-items:center; }
+    .icon{ width:44px; height:44px; background:linear-gradient(135deg,#fff,#f6fbff); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--accent); }
+    .card h4{ margin:0 0 6px 0; font-size:15px; }
+    .card p{ margin:0; font-size:13px; color:var(--muted); }
+    /* 水印区域 */
+    .watermark-area{ margin-top:20px; display:flex; gap:16px; align-items:flex-start; }
+    .left{ flex:1; }
+    .right{ width:360px; }
+    .preview{ width:100%; height:360px; background:#eef6ff; border-radius:8px; display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px dashed #d6e8ff; }
+    .controls{ background:#fff; padding:12px; border-radius:8px; box-shadow:0 6px 16px rgba(12,24,40,0.04); }
+    input[type="file"]{ display:block; }
+    button{ background:var(--accent); color:#fff; border:0; padding:10px 12px; border-radius:8px; cursor:pointer; }
+    .muted{ color:#7b8aa0; font-size:13px; }
+  </style>
 </head>
 <body>
-<div class="page">
-    <div class="header-title">在线工具中心</div>
-
-    <!-- 媒体相关模块 -->
-    <div class="section">
-        <div class="section-title">媒体相关</div>
-        <div class="card-grid">
-
-            <!-- 示例卡片：视频压缩 -->
-            <div class="tool-card">
-                <div class="tool-icon">▶</div>
-                <div class="tool-info">
-                    <div class="tool-name">视频压缩</div>
-                    <div class="tool-desc">压缩率高达 80% - 90%</div>
-                </div>
-            </div>
-
-            <!-- 示例卡片：内容相似度检测 -->
-            <div class="tool-card">
-                <div class="tool-icon">≌</div>
-                <div class="tool-info">
-                    <div class="tool-name">内容相似度检测</div>
-                    <div class="tool-desc">图片和文本相似度检测</div>
-                </div>
-            </div>
-
-            <!-- 示例卡片：OCR -->
-            <div class="tool-card">
-                <div class="tool-icon">文</div>
-                <div class="tool-info">
-                    <div class="tool-name">图片识别文字（OCR）</div>
-                    <div class="tool-desc">提取图片中的文字</div>
-                </div>
-            </div>
-
-            <!-- 重点：图片加水印入口（点这里跳到你的水印页面） -->
-            <a class="tool-link" href="./watermark-tool.html" target="_blank">
-                <div class="tool-card">
-                    <div class="tool-icon">W</div>
-                    <div class="tool-info">
-                        <div class="tool-name">图片加水印</div>
-                        <div class="tool-desc">图片批量添加文字水印</div>
-                    </div>
-                </div>
-            </a>
-
+  <div class="wrap">
+    <div class="panel">
+      <div class="title">
+        <div class="badge">媒体相关</div>
+        <div>
+          <h2 style="margin:0">媒体相关工具</h2>
+          <div class="muted">图片/视频/音频的常用工具集合</div>
         </div>
-    </div>
+      </div>
 
-    <!-- 编程开发模块（示意，可按需删掉或新增） -->
-    <div class="section">
-        <div class="section-title">编程开发</div>
-        <div class="card-grid">
-            <div class="tool-card">
-                <div class="tool-icon">【</div>
-                <div class="tool-info">
-                    <div class="tool-name">JSON 格式化</div>
-                    <div class="tool-desc">在线查看与美化 JSON</div>
-                </div>
-            </div>
-            <!-- 可以继续添加更多工具卡片 -->
+      <div class="grid" aria-hidden="false">
+        <div class="card"><div class="icon">V</div><div><h4>视频压缩</h4><p>压缩率高达 80% - 90%</p></div></div>
+        <div class="card"><div class="icon">♪</div><div><h4>音频可视化</h4><p>将音频生成频谱动图</p></div></div>
+        <div class="card"><div class="icon">🔎</div><div><h4>内容相似度检测</h4><p>图片和文本相似度检测</p></div></div>
+        <div class="card"><div class="icon">OCR</div><div><h4>图片识别文字</h4><p>提取图片中的文字</p></div></div>
+
+        <div class="card"><div class="icon">Exif</div><div><h4>清理 Exif</h4><p>清理图片 Exif 数据</p></div></div>
+        <div class="card"><div class="icon">水印</div><div><h4>图片加水印</h4><p>图片批量添加水印（点击下方体验）</p></div></div>
+        <div class="card"><div class="icon">🖼</div><div><h4>图片生成图片</h4><p>AI 生成类似图片</p></div></div>
+        <div class="card"><div class="icon">🎙</div><div><h4>在线录音</h4><p>在线录音并保存到本地</p></div></div>
+      </div>
+
+      <div class="watermark-area">
+        <div class="left">
+          <div class="controls">
+            <label>选择图片（支持 PNG / JPEG，支持多选）</label>
+            <input id="fileInput" type="file" accept="image/*" multiple />
+            <div style="height:10px"></div>
+            <label>水印文字</label>
+            <input id="wmText" type="text" value="© CodeNerd404" style="width:100%; padding:8px; margin-top:6px; border-radius:6px; border:1px solid #e6eefc;" />
+            <div style="height:10px"></div>
+            <label>不透明度 (0-1)</label>
+            <input id="wmOpacity" type="number" step="0.1" min="0" max="1" value="0.6" style="width:100%; padding:8px; margin-top:6px; border-radius:6px; border:1px solid #e6eefc;" />
+            <div style="height:10px"></div>
+            <label>位置</label>
+            <select id="wmPosition" style="width:100%; padding:8px; border-radius:6px; border:1px solid #e6eefc;">
+              <option value="bottom-right">右下角</option>
+              <option value="center">中心</option>
+              <option value="top-left">左上角</option>
+            </select>
+            <div style="height:10px"></div>
+            <button id="applyBtn">应用水印并下载</button>
+            <div style="height:10px"></div>
+            <div class="muted">提示：页面会优先尝试加载 <code>CodeNerd404/watermark-tool</code> 仓库的前端脚本（如果放在 <code>dist/watermark.js</code> 或通过 jsDelivr 可直接访问）。如果未找到，则使用本站内置的浏览器 Canvas 回退实现。</div>
+          </div>
         </div>
+        <div class="right">
+          <div class="preview" id="previewArea">预览区（加载图片）</div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="footer">
-        © 2026 我的在线工具 · 所有图片均在浏览器本地处理，不会上传服务器
-    </div>
-</div>
+  <!-- 尝试从 watermark-tool 仓库通过 jsDelivr 加载前端脚本（容错） -->
+  <script>
+    (function(){
+      var s = document.createElement('script');
+      // 尝试常见发布路径：dist/watermark.js
+      s.src = 'https://cdn.jsdelivr.net/gh/CodeNerd404/watermark-tool@main/dist/watermark.js';
+      s.crossOrigin = 'anonymous';
+      s.onload = function(){ console.log('外部 watermark-tool 已加载 (jsDelivr).'); };
+      s.onerror = function(){ console.log('未能通过 jsDelivr 加载外部 watermark-tool，页面将使用内置回退实现。'); };
+      document.head.appendChild(s);
+    })();
+  </script>
+
+  <script src="assets/js/batch-watermark.js"></script>
 </body>
 </html>
